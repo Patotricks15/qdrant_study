@@ -1,4 +1,6 @@
-# Qdrant VectorDatabase
+# Qdrant VectorDatabase study notes
+---
+# [Introduction to Vector database](https://qdrant.tech/articles/what-is-a-vector-database/)
 
 ## **What is a Vector Database?**
 - A Vector Database is a **specialized system** designed to efficiently handle **high-dimensional vector data**
@@ -58,3 +60,22 @@ Usually obtained from late interaction models like ColBERT.
 
 ## What is vector quantization?
 Vector quantization is a technique that reduces the **size in bytes** of vectors. Techniques like **Scalar Quantization** and **Product Quantization** are also popular alternatives when **optimizing vector compression.**
+
+
+
+# [Vector embeddings](https://qdrant.tech/articles/what-are-embeddings/)
+
+---
+# [Hybrid search](https://qdrant.tech/articles/hybrid-search/)
+
+---
+# [Vector quantization](https://qdrant.tech/articles/what-is-vector-quantization/)
+
+---
+# [Resource optimization](https://qdrant.tech/articles/vector-search-resource-optimization/)
+
+---
+# [Sparse vectors](https://qdrant.tech/articles/sparse-vectors/)
+
+---
+# [Optimizing memory](https://qdrant.tech/articles/indexing-optimization/)
