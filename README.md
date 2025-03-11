@@ -64,6 +64,14 @@ Vector quantization is a technique that reduces the **size in bytes** of vectors
 
 
 # [Vector embeddings](https://qdrant.tech/articles/what-are-embeddings/)
+## What are embeddings?
+- Embeddings are **numerical** machine learning **representations** of the **semantic** of the input data. They capture the **meaning of complex**, high-dimensional data, like text, images, or audio, into vectors. Enabling algorithms to process and analyze the data more efficiently.
+
+## What are the main limitations of Word2Vec and GloVe?
+- The limitations of Word2Vec and GloVe include **generating a single vector per word**, blending **nuances** into one representation, and relying on **co-occurrence**, which can **lead to biases and limitations** in capturing complex relationships between words.
+
+## What are the advantage of models like BERT and GPT?
+- Models like BERT and GPT have the advantage of **capturing complex relationships** between words and their **contexts** through their use of the **transformer architecture and self-attention mechanism**. This allows them to generate **high-quality vector embeddings** that can capture **nuanced differences in word meanings**.
 
 ---
 # [Hybrid search](https://qdrant.tech/articles/hybrid-search/)
