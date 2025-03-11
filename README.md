@@ -102,13 +102,21 @@ Vector quantization is a technique that reduces the **size in bytes** of vectors
 - Compressing vectors reduces memory usage while maintaining nearly all of the essential information.
 - This method allows for more efficient storage and faster search operations, particularly in large datasets.
 
+---
+# [Sparse vectors](https://qdrant.tech/articles/sparse-vectors/)
 
+## What's a sparse vectors?
+- A sparse vector is a representation of a document or query where each dimension corresponds to a word or subword, with most values being zero.
+- Sparse vectors are useful in domains where many rare keywords or specialized terms are present.
+
+## How sparse vectors improve search systems efficiency?
+- Sparse vectors can improve search systems efficiency by reducing the dimensionality of the data and using only the most relevant terms.
+
+## What's term expansion in SPLADE?
+- Term expansion is a process where SPLADE expands a query or document to include contextually relevant terms that are not explicitly mentioned.
 
 ---
 # [Resource optimization](https://qdrant.tech/articles/vector-search-resource-optimization/)
-
----
-# [Sparse vectors](https://qdrant.tech/articles/sparse-vectors/)
 
 ---
 # [Optimizing memory](https://qdrant.tech/articles/indexing-optimization/)
