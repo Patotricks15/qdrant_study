@@ -75,9 +75,34 @@ Vector quantization is a technique that reduces the **size in bytes** of vectors
 
 ---
 # [Hybrid search](https://qdrant.tech/articles/hybrid-search/)
+## What's late interaction?
+- Late interaction refers to a type of interaction between the tokens of the query and the document that occurs during the search process.
+- In the context of ColBERT, late interaction models create a separate embedding for each token of text, and the final score is calculated based on the interaction between the tokens of the query and the document.
+
+## Why use Reciprocal Rank Fusion method instead of reranking?
+- It's a more straightforward approach that involves normalizing the scores returned by each method and then calculating a final score using a formula.
 
 ---
 # [Vector quantization](https://qdrant.tech/articles/what-is-vector-quantization/)
+## What's product quantization?
+- Product Quantization is a method used to compress high-dimensional vectors by representing them with a smaller set of representative points.
+- The process begins by splitting the original high-dimensional vectors into smaller sub-vectors. Each sub-vector represents a segment of the original vector, capturing different characteristics of the data.
+
+## What's binary quantization?
+- Significant boost in speed.
+- Values greater than zero are converted to 1.
+- Values less than or equal to zero are converted to 0.
+
+## What's scalar quantization?
+- Transform float32 (4 bytes) values into int8 (1 byte) values
+
+
+## What's vector quantization?
+- Vector quantization is a data compression technique used to reduce the size of high-dimensional data.
+- Compressing vectors reduces memory usage while maintaining nearly all of the essential information.
+- This method allows for more efficient storage and faster search operations, particularly in large datasets.
+
+
 
 ---
 # [Resource optimization](https://qdrant.tech/articles/vector-search-resource-optimization/)
