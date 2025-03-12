@@ -118,5 +118,76 @@ Vector quantization is a technique that reduces the **size in bytes** of vectors
 ---
 # [Resource optimization](https://qdrant.tech/articles/vector-search-resource-optimization/)
 
+## Explain the 3 key HNSW parameters
+- **m** controls the graph's **complexity** and **memory usage**.
+- **ef_construct** affects the index building process and its **accuracy**.
+- **ef** influences the search **query speed** and **accuracy**.
+
+## What are the benefits of scalar quantization?
+- Memory usage will drop: float32 -> int8 (32 / 8 = 4)
+- Accuracy loss is minimal
+
+## What are the benefits of binary quantization?
+- Efficient similarity calculations: Emulates **Hamming distance** through dot product comparisons, **making it fast and effective**.
+- Perfect for high-dimensional vectors: Works well with embedding models like **OpenAI’s text-embedding-ada-002** or **Cohere’s embed-english-v3.0**.
+
+## Which are the methods to manage large vector datasets?
+- Multitenancy and sharding
+
+## What's Multitenancy?
+- Is a software architecture where multiple independent users (or tenants) share the same resources or environment.
+
+## Why choosing Multitenancy?
+- **Logical Isolation:** Ensures **each tenant’s data remains separate** while residing in the same collection.
+- **Minimized Overhead**: **Reduces resource consumption** compared to maintaining separate collections for each user.
+- **Scalability**: Handles **high user volumes** without compromising performance.
+
+## What's Sharding?
+- Sharding is a critical strategy in Qdrant for splitting collections into smaller units, called shards, to efficiently distribute data across multiple nodes.
+
+## Which are the methods to optimize the query?
+- Filtering, batch processing, reranking, rescoring, and oversampling,
+
+## Explain Filtering
+- Filtering allows you to **select only the required fields** in your query results. By limiting the output size, you can significantly **reduce response time** and **improve performance**.
+
+## Explain Batch Processing
+- Batch processing **consolidates multiple operations into a single execution cycle**, **reducing request overhead** and enhancing throughput.
+- Instead of inserting vectors individually, group them into **medium-sized batches** to **minimize the number of database requests** and the overhead of frequent writes.
+
+## Explain Hybrid Search
+- Hybrid search **combines keyword filtering with vector similarity search**, enabling faster and more precise results.
+- Keywords help **narrow down** the dataset quickly, while vector similarity **ensures semantic accuracy**.
+- This search method **combines dense and sparse vectors**.
+
+## Explain Oversampling
+- Oversampling is a technique that helps **compensate for any precision lost due to quantization**.
+- Since quantization simplifies vectors, some relevant matches could be missed in the initial search. To avoid this, you can **retrieve more candidates**, increasing the chances that the **most relevant vectors** make it into the final results.
+
+## Explain Rescoring
+- After oversampling to gather more potential matches, **each candidate is re-evaluated based on additional criteria** to ensure **higher accuracy** and **relevance** to the query.
+- The rescoring process **maps the quantized vectors to their corresponding original vectors**, allowing you to consider factors like **context, metadata, or additional relevance** that wasn’t included in the initial search, leading to more accurate results.
+
+## Explain Reranking
+- Reranking adjusts the **order of search results** based on additional criteria, ensuring the **most relevant results are prioritized**.
+- This method is about taking the results from **different search methods** and **reordering** them based on **some additional processing** using the content of the documents, not just the scores
+
+## Which are the storage methods?
+- InMemory and Memmap
+
+## Explain InMemory Storage
+- **How it works**: **All data is stored in RAM**, providing the **fastest access times** for queries and operations.
+- **When to use it**: This setup is ideal for applications **where performance is critical**, and your RAM capacity can accommodate all data.
+- **Advantages**: **Maximum speed** for queries and updates.
+- **Limitations**: RAM usage can become a **bottleneck** as your **dataset grows**.
+
+
+## Explain Memmap Storage
+- **How it works**: Instead of loading all data into memory, **memmap storage maps data files directly to a virtual address space on disk**. The system’s page cache handles data access, making it highly efficient.
+- **When to use it**: Perfect for **storing large collections** that **exceed your available RAM** while still maintaining near in-memory performance when enough RAM is available.
+- **Advantages**: **Balances performance and memory usage**, allowing you to work with **datasets larger** than your physical RAM.
+- **Limitations**: **Slightly slower than pure in-memory storage** but significantly more scalable.
+
+
 ---
 # [Optimizing memory](https://qdrant.tech/articles/indexing-optimization/)
