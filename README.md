@@ -191,3 +191,11 @@ Vector quantization is a technique that reduces the **size in bytes** of vectors
 
 ---
 # [Optimizing memory](https://qdrant.tech/articles/indexing-optimization/)
+
+- **Disable HNSW for dense vectors**: Set **m to 0** to prevent building the HNSW graph for incoming vectors, **reducing unnecessary memory and CPU usage**.
+- **Store vector data on disk immediately**: Use on_disk: true to store vector data on disk right from the start, **reducing memory usage and making bulk ingestion more efficient**.
+- **Enable on-disk storage for indexes**: Store indexes on disk to **reduce memory usage and prevent out-of-memory errors**.
+- **Use scalar quantization**: Compress vectors to **reduce memory usage** and preserve performance advantages of RAM-based search.
+- **Adjust indexing threshold**: Set a **positive threshold** to delay indexing and **batch more vectors at once**, potentially using more RAM at the moment of index build, but fewer builds overall.
+
+
